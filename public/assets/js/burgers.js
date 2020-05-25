@@ -1,7 +1,9 @@
 $(function () {
+    // Add burger on click
     $("#add-burger").click(function (event) {
         event.preventDefault();
 
+        // Name of burger will be input field
         var newBurger = {
             name: $("#burger-text").val(),
         };
@@ -19,25 +21,27 @@ $(function () {
         );
     });
 
-    $("#burger-text").keypress(function(e){
-        if(e.which == 13){
+    // Add burger on enter keypress
+    $("#burger-text").keypress(function (e) {
+        if (e.which == 13) {
             $('#add-burger').click();
         }
     });
 
-    $(".devour").on("click", function(event) {
+    // Update burger to devoured on click
+    $(".devour").on("click", function (event) {
         var burgerID = $(this).data("id");
-    
+
         // Send the PUT request.
         $.ajax("/api/burgers/" + burgerID, {
-          type: "PUT",
-          data: burgerID
+            type: "PUT",
+            data: burgerID
         }).then(
-          function() {
-            console.log("Devoured burger");
-            // Reload the page to get the updated list
-            location.reload();
-          }
+            function () {
+                console.log("Devoured burger");
+                // Reload the page to get the updated list
+                location.reload();
+            }
         );
-      });
+    });
 });
