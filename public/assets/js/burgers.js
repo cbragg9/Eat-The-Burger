@@ -1,5 +1,5 @@
 $(function () {
-    $("#add-burger").on("click", function (event) {
+    $("#add-burger").click(function (event) {
         event.preventDefault();
 
         var newBurger = {
@@ -17,6 +17,12 @@ $(function () {
                 location.reload();
             }
         );
+    });
+
+    $("#burger-text").keypress(function(e){
+        if(e.which == 13){
+            $('#add-burger').click();
+        }
     });
 
     $(".devour").on("click", function(event) {
