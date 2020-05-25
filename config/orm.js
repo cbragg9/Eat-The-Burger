@@ -27,8 +27,6 @@ var orm = {
         var queryString = `UPDATE ${table}`;
         queryString += ` SET ${colVals}`;
         queryString += ` WHERE ${condition}`;
-
-        console.log(queryString);
     
         connection.query(queryString, function(err, result) {
           if (err) {
