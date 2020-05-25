@@ -4,22 +4,22 @@ var orm = require("../config/orm.js");
 
 var burger = {
     // CRUD: Read
-    all: function (cb) {
-        orm.all("burgers", function (res) {
+    selectAll: function (cb) {
+        orm.selectAll("burgers", function (res) {
             cb(res);
         });
     },
 
     // CRUD: Create
-    create: function (vals, cb) {
-        orm.create("burgers", "name", vals, function (res) {
+    insertOne: function (vals, cb) {
+        orm.insertOne("burgers", "burger_name", vals, function (res) {
             cb(res);
         });
     },
 
     // CRUD: Update
-    update: function (condition, cb) {
-        orm.update("burgers", "devoured = true", condition, function (res) {
+    updateOne: function (condition, cb) {
+        orm.updateOne("burgers", "devoured = true", condition, function (res) {
             cb(res);
         });
     }

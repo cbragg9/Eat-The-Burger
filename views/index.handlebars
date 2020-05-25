@@ -41,7 +41,7 @@
                 {{#unless devoured}}
                 <tr>
                     <th scope="row">{{id}}</th>
-                    <td>{{name}}</td>
+                    <td>{{burger_name}}</td>
                     <td><button class="devour btn btn-primary" data-id={{id}}>Devour</button></td>
                 </tr>
                 {{/unless}}
@@ -65,7 +65,7 @@
                 {{#if devoured}}
                 <tr>
                     <th scope="row">{{id}}</th>
-                    <td>{{name}}</td>
+                    <td>{{burger_name}}</td>
                     <td>Devoured!</td>
                 </tr>
                 {{/if}}

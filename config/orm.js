@@ -5,7 +5,7 @@ var connection = require("../config/connection.js");
 
 var orm = {
     // CRUD: Read
-    all: function (tableInput, cb) {
+    selectAll: function (tableInput, cb) {
         var queryString = "SELECT * FROM " + tableInput + ";";
         connection.query(queryString, function (err, result) {
             if (err) {
@@ -16,7 +16,7 @@ var orm = {
     },
 
     // CRUD: Create
-    create: function (table, cols, vals, cb) {
+    insertOne: function (table, cols, vals, cb) {
         var queryString = `INSERT INTO ${table} (${cols})`;
         queryString += ` VALUES ('${vals}')`;
 
@@ -30,7 +30,7 @@ var orm = {
     },
 
     // CRUD: Update
-    update: function (table, colVals, condition, cb) {
+    updateOne: function (table, colVals, condition, cb) {
         var queryString = `UPDATE ${table}`;
         queryString += ` SET ${colVals}`;
         queryString += ` WHERE ${condition}`;
