@@ -1,7 +1,12 @@
 # Eat-The-Burger
 
 ## Description
-Full stack logging app utilizing MySQL, Node, Express, Handlebars, jQuery, ORM, and a MVC design pattern.  
+Full stack, responsive logging app utilizing MySQL CRUD, Node, Express, Handlebars, jQuery, Bootstrap, ORM, and a MVC design pattern.  
+
+1) Display Burgers in MySQL Database (Read)
+2) Add a Burger (Create)
+3) Devour a Burger (Update)
+4) Delete Devoured Burgers (Delete)
 
 ## Deployed URL: https://lit-castle-73053.herokuapp.com/  
 

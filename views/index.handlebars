@@ -30,7 +30,7 @@
                 <thead>
                     <tr class="table-primary">
                         <th scope="col">ID</th>
-                        <th scope="col">Name</th>
+                        <th scope="col">MENU</th>
                         <th scope="col">Devour?</th>
                     </tr>
                 </thead>
@@ -54,8 +54,8 @@
                 <thead>
                     <tr class="table-danger">
                         <th scope="col">ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Devoured!</th>
+                        <th scope="col">DEVOURED Burgers</th>
+                        <th scope="col">Delete?</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -66,7 +66,7 @@
                 <tr>
                     <th scope="row">{{id}}</th>
                     <td>{{burger_name}}</td>
-                    <td>Devoured!</td>
+                    <td><button class="delete btn btn-danger" data-id={{id}}>Delete?</button></td>
                 </tr>
                 {{/if}}
                 {{/each}}
