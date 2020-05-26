@@ -10,7 +10,7 @@ Full stack, responsive logging app utilizing MySQL CRUD, Node, Express, Handleba
 
 ## Deployed URL: https://lit-castle-73053.herokuapp.com/  
 
-![EatDaBurger Example](https://media.giphy.com/media/keZbUpvJqaaO5l55qU/giphy.gif)
+![EatDaBurger Example](https://media.giphy.com/media/mGatoHliJx9CK1DmIt/giphy.gif)
 
 ## Script Features  
 -SQL Database deployed with Heroku  

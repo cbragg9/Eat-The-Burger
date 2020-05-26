@@ -18,12 +18,10 @@ router.get("/", function (req, res) {
 
 // CRUD: Create
 router.post("/api/burgers", function (req, res) {
-    burger.insertOne(
-        req.body.name
-        , function (result) {
-            // Send back the ID of the new burger
-            res.json({ id: result.insertId });
-        });
+    burger.insertOne(req.body.name, function (result) {
+        // Send back the ID of the new burger
+        res.json({ id: result.insertId });
+    });
 });
 
 // CRUD: Update
@@ -46,7 +44,7 @@ router.delete("/api/burgers/:id", function (req, res) {
 
     burger.deleteOne(condition, function (result) {
         if (result.affectedRows == 0) {
-            // If no rows were changed, then the ID must not exist, so 404
+            // If no rows were deleted, then the ID must not exist, so 404
             return res.status(404).end();
         } else {
             res.status(200).end();
