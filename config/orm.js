@@ -6,8 +6,9 @@ var connection = require("../config/connection.js");
 var orm = {
     // CRUD: Read
     selectAll: function (tableInput, cb) {
-        var queryString = "SELECT * FROM " + tableInput + ";";
-        connection.query(queryString, function (err, result) {
+        var queryString = "SELECT * FROM ??";
+
+        connection.query(queryString, [tableInput], function (err, result) {
             if (err) {
                 throw err;
             }
@@ -17,10 +18,9 @@ var orm = {
 
     // CRUD: Create
     insertOne: function (table, cols, vals, cb) {
-        var queryString = `INSERT INTO ${table} (${cols})`;
-        queryString += ` VALUES ('${vals}')`;
+        var queryString = "INSERT INTO ?? (??) VALUES (?)";
 
-        connection.query(queryString, vals, function (err, result) {
+        connection.query(queryString, [table, cols, vals], function (err, result) {
             if (err) {
                 throw err;
             }
@@ -30,12 +30,10 @@ var orm = {
     },
 
     // CRUD: Update
-    updateOne: function (table, colVals, condition, cb) {
-        var queryString = `UPDATE ${table}`;
-        queryString += ` SET ${colVals}`;
-        queryString += ` WHERE ${condition}`;
+    updateOne: function (table, col, val, condition, value, cb) {
+        var queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?" ;
 
-        connection.query(queryString, function (err, result) {
+        connection.query(queryString, [table, col, val, condition, value], function (err, result) {
             if (err) {
                 throw err;
             }
@@ -45,11 +43,10 @@ var orm = {
     },
 
     // CRUD: Delete
-    deleteOne: function (table, condition, cb) {
-        var queryString = `DELETE FROM ${table}`;
-        queryString += ` WHERE ${condition}`;
+    deleteOne: function (table, condition, value, cb) {
+        var queryString = "DELETE FROM ?? WHERE ?? = ?";
 
-        connection.query(queryString, function (err, result) {
+        connection.query(queryString, [table, condition, value], function (err, result) {
             if (err) {
                 throw err;
             }

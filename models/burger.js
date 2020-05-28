@@ -18,15 +18,15 @@ var burger = {
     },
 
     // CRUD: Update
-    updateOne: function (condition, cb) {
-        orm.updateOne("burgers", "devoured = true", condition, function (res) {
+    updateOne: function (id, cb) {
+        orm.updateOne("burgers", "devoured", "1", "id", id, function (res) {
             cb(res);
         });
     },
 
     // CRUD: Delete
-    deleteOne: function (condition, cb) {
-        orm.deleteOne("burgers", condition, function (res) {
+    deleteOne: function (id, cb) {
+        orm.deleteOne("burgers", "id", id, function (res) {
             cb(res);
         });
     }
